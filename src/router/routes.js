@@ -17,6 +17,22 @@ const routes = [
     children: [{ path: '', component: () => import('pages/ProductsAdd.vue') }],
   },
 
+  {
+    path: '/suppliers/add',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Suppliers/SuppliersAdd.vue') },
+    ],
+  },
+
+  {
+    path: '/suppliers/all',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Suppliers/SuppliersAll.vue') },
+    ],
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
