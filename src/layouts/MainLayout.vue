@@ -23,7 +23,7 @@
           <q-item-section>
             <q-expansion-item
               label="Help Item"
-              header-style="font-size: 25px; font-family: Arial;"
+              header-style="font-size: 18px; font-family: Arial;"
             >
               <q-item-label header>Essential Links</q-item-label>
 
@@ -38,10 +38,9 @@
 
         <q-item>
           <q-item-section>
-           
             <q-expansion-item
               label="Customers"
-              header-style="font-size: 25px; font-family: Arial;"
+              header-style="font-size: 18px; font-family: Arial;"
             >
               <q-item to="/customers/all" clickable>
                 <q-item-section avatar>
@@ -69,14 +68,16 @@
                 </q-item-section>
                 <q-item-section>
                   <q-item-label>Report</q-item-label>
-                  <q-item-label caption>Generate a customer report</q-item-label>
+                  <q-item-label caption
+                    >Generate a customer report</q-item-label
+                  >
                 </q-item-section>
               </q-item>
             </q-expansion-item>
 
             <q-expansion-item
               label="Products"
-              header-style="font-size: 25px; font-family: Arial;"
+              header-style="font-size: 18px; font-family: Arial;"
             >
               <q-item to="/products/all" clickable>
                 <q-item-section avatar>
@@ -111,7 +112,7 @@
 
             <q-expansion-item
               label="Suppliers"
-              header-style="font-size: 25px; font-family: Arial;"
+              header-style="font-size: 18px; font-family: Arial;"
             >
               <q-item to="/suppliers/all" clickable>
                 <q-item-section avatar>

@@ -10,9 +10,23 @@
             label="Customer Name"
             required
           />
-          <q-input outlined v-model="phone" label="Phone Number" />
-          <q-input outlined v-model="email" label="Email" type="email" />
-          <q-input outlined v-model="address" label="Address" type="textarea" />
+          <q-input
+            outlined
+            v-model="phone"
+            label="Phone Number"
+          />
+          <q-input
+            outlined
+            v-model="email"
+            label="Email"
+            type="email"
+          />
+          <q-input
+            outlined
+            v-model="address"
+            label="Address"
+            type="textarea"
+          />
           <h2>Purchase History</h2>
           <q-table
             flat
@@ -21,7 +35,12 @@
             :columns="purchaseColumns"
           />
           <h2>Order History</h2>
-          <q-table flat bordered :rows="orderHistory" :columns="orderColumns" />
+          <q-table
+            flat
+            bordered
+            :rows="orderHistory"
+            :columns="orderColumns"
+          />
           <h2>Payment Information</h2>
           <q-table
             flat
@@ -77,16 +96,12 @@ import { ref } from 'vue';
 
 export default {
   name: 'CustomerAdd',
-
   data() {
     return {
-      // Customer Information
       customerName: '',
       phone: '',
       email: '',
       address: '',
-
-      // Purchase History
       purchaseHistory: [],
       purchaseColumns: [
         {
@@ -98,8 +113,6 @@ export default {
           label: 'Purchase Date',
         },
       ],
-
-      // Order History
       orderHistory: [],
       orderColumns: [
         {
@@ -115,8 +128,6 @@ export default {
           label: 'Invoice Number',
         },
       ],
-
-      // Payment Information
       paymentHistory: [],
       paymentColumns: [
         {
@@ -132,77 +143,7 @@ export default {
           label: 'Payment Method',
         },
       ],
-
-      // Preferences
       preferences: '',
-
-      // Customer Type
       customerType: '',
       customerTypeOptions: [
-        { label: 'Retail', value: 'Retail' },
-        { label: 'Wholesale', value: 'Wholesale' },
-      ],
-
-      // Communication History
-      communicationHistory: [],
-      communicationColumns: [
-        {
-          name: 'date',
-          label: 'Date',
-        },
-        {
-          name: 'type',
-          label: 'Type',
-        },
-        {
-          name: 'notes',
-          label: 'Notes',
-        },
-      ],
-
-      // Feedback
-      feedback: '',
-
-      // Marketing Information
-      marketingHistory: [],
-      marketingColumns: [
-        {
-          name: 'date',
-          label: 'Date',
-        },
-        {
-          name: 'type',
-          label: 'Type',
-        },
-        {
-          name: 'response',
-          label: 'Response',
-        },
-      ],
-    };
-  },
-
-  methods: {
-    // Submit form
-    submitForm() {
-      const customer = {
-        customerName: this.customerName,
-        phone: this.phone,
-        email: this.email,
-        address: this.address,
-        purchaseHistory: this.purchaseHistory,
-        orderHistory: this.orderHistory,
-        paymentHistory: this.paymentHistory,
-        preferences: this.preferences,
-        customerType: this.customerType,
-        communicationHistory: this.communicationHistory,
-        feedback: this.feedback,
-        marketingHistory: this.marketingHistory,
-      };
-
-      console.log(customer);
-      // Submit form data to API or database here
-    },
-  },
-};
-</script>
+        { label: 'Retail', value: 'Retail
