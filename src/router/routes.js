@@ -5,18 +5,23 @@ const routes = [
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
 
+  //Customer Routes
   {
     path: '/customers/add',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/CustomersAdd.vue') }],
+    children: [{ path: '', component: () => import('pages/Customers/CustomersAdd.vue') }],
   },
 
+  //Product Routes
   {
     path: '/products/add',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/ProductsAdd.vue') }],
+    children: [
+      { path: '', component: () => import('pages/Products/ProductsAdd.vue') },
+    ],
   },
-
+  
+//Supplier Routes
   {
     path: '/suppliers/add',
     component: () => import('layouts/MainLayout.vue'),

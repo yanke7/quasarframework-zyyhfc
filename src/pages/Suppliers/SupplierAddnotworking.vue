@@ -1,9 +1,15 @@
-
 <template>
   <q-page>
     <q-header elevated>
       <q-toolbar>
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="$q.layout.toggle('left')" />
+        <q-btn
+          flat
+          dense
+          round
+          icon="menu"
+          aria-label="Menu"
+          @click="$q.layout.toggle('left')"
+        />
 
         <q-toolbar-title>Add Supplier</q-toolbar-title>
       </q-toolbar>
@@ -16,7 +22,10 @@
         <q-input v-model="supplier.contactInfo.email" label="Email" />
         <q-input v-model="supplier.contactInfo.address" label="Address" />
         <q-input v-model="supplier.leadTime" label="Lead Time" />
-        <q-input v-model="supplier.minOrderQuantity" label="Minimum Order Quantity" />
+        <q-input
+          v-model="supplier.minOrderQuantity"
+          label="Minimum Order Quantity"
+        />
         <q-input v-model="supplier.orderFrequency" label="Order Frequency" />
         <q-input v-model="supplier.productInfo" label="Product Information" />
         <q-input v-model="supplier.priceList" label="Price List" />

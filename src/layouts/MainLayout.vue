@@ -74,6 +74,41 @@
             </q-expansion-item>
 
             <q-expansion-item
+              label="Products"
+              header-style="font-size: 25px; font-family: Arial;"
+            >
+              <q-item to="/products/all" clickable>
+                <q-item-section avatar>
+                  <q-icon name="view_list" />
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>All</q-item-label>
+                  <q-item-label caption>List of all products</q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-item to="/products/add" clickable>
+                <q-item-section avatar>
+                  <q-icon name="add" />
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>Add</q-item-label>
+                  <q-item-label caption>Add a new product</q-item-label>
+                </q-item-section>
+              </q-item>
+
+              <q-item to="/products/report" clickable>
+                <q-item-section avatar>
+                  <q-icon name="description" />
+                </q-item-section>
+                <q-item-section>
+                  <q-item-label>Report</q-item-label>
+                  <q-item-label caption>Generate a product report</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-expansion-item>
+
+            <q-expansion-item
               label="Suppliers"
               header-style="font-size: 25px; font-family: Arial;"
             >
