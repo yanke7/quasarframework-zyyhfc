@@ -5,7 +5,7 @@
         <q-card-section>
           <h2 class="text-h4">Add Inventory</h2>
         </q-card-section>
-        
+         
         <q-card-section>
           <q-input v-model="productType" label="Product Type" />
           <q-input v-model="brand" label="Brand" />
