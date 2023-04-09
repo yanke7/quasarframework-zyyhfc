@@ -13,19 +13,13 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
-      <q-scroll-area
-        style="
-          height: calc(100% - 150px);
-          margin-top: 150px;
-          border-right: 1px solid #ddd;
-        "
-      >
-        <q-list padding>
-          <!-- Menu Link are in components -->
-          <menu-links-component></menu-links-component>
-        </q-list>
-      </q-scroll-area>
+    <q-drawer
+      show-if-above
+      :width="250"
+      v-model="leftDrawerOpen"
+      side="left"
+      bordered
+    >
       <q-img
         class="absolute-top"
         src="https://cdn.quasar.dev/logo-v2/social-cover.jpg"
@@ -41,12 +35,27 @@
           <div>Master Crime Fighter</div>
         </div>
       </q-img>
+
+      <q-scroll-area
+        style="
+          height: calc(100% - 150px);
+          margin-top: 150px;
+          border-right: 1px solid #ddd;
+        "
+      >
+        <q-list padding>
+          <!-- Menu Link are in components -->
+          <menu-links-component></menu-links-component>
+        </q-list>
+      </q-scroll-area>
     </q-drawer>
 
     <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
       <q-list>
         <q-item>
-          <q-item-section> Right drawer content </q-item-section>
+          <q-item-section>
+            <menu-links-component></menu-links-component>
+          </q-item-section>
         </q-item>
       </q-list>
     </q-drawer>
