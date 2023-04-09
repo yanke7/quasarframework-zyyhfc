@@ -94,20 +94,20 @@ export default {
           ],
         },
         {
-          label: 'Customers',
+          label: 'Supplier',
           items: [
             {
-              to: '/customers/all',
+              to: '/suppliers/all',
               icon: 'view_list',
-              label: 'Customer List',
+              label: 'Supplier List',
             },
             {
-              to: '/customers/add',
+              to: '/suppliers/add',
               icon: 'add',
-              label: 'Add Customer',
+              label: 'Add Supplier',
             },
             {
-              to: '/customers/reports',
+              to: '/supplier/reports',
               icon: 'description',
               label: 'Reports',
             },
