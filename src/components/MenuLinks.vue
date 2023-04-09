@@ -114,22 +114,22 @@ export default {
           ],
         },
         {
-          label: 'Customers',
+          label: 'Maps',
           items: [
             {
-              to: '/customers/all',
+              to: '/maps/mapsview',
               icon: 'view_list',
-              label: 'Customer List',
+              label: 'Map View',
             },
             {
-              to: '/customers/add',
+              to: '/maps/markermap',
               icon: 'add',
-              label: 'Add Customer',
+              label: 'Marker Map',
             },
             {
-              to: '/customers/reports',
+              to: '/maps/streetview',
               icon: 'description',
-              label: 'Reports',
+              label: 'StreetView',
             },
           ],
         },
