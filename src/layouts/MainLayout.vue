@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHr lpR fFf">
-    <q-header elevated class="bg-primary text-white" height-hint="98">
+    <q-header elevated class="bg-primary text-white">
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
         <q-toolbar-title>
@@ -44,7 +44,11 @@
     </q-drawer>
 
     <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
-      <!-- Right drawer content -->
+      <q-list>
+        <q-item>
+          <q-item-section> Right drawer content </q-item-section>
+        </q-item>
+      </q-list>
     </q-drawer>
 
     <q-page-container>
