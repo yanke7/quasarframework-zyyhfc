@@ -1,19 +1,34 @@
 <template>
-  <q-layout view="hHr lpR fFf">
-    <q-header elevated class="bg-primary text-white" height-hint="98">
-      <q-toolbar>
-        <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
-          Low Voltage Canada
-        </q-toolbar-title>
-        <q-btn dense flat round icon="more_vert" @click="toggleRightDrawer" />
+  <q-layout view="lHh Lpr lFf">
+    <q-header elevated>
+      <q-toolbar class="no-wrap">
+        <div class="col row">
+          <q-btn
+            flat
+            dense
+            round
+            icon="menu"
+            aria-label="Menu"
+            @click="toggleLeftDrawer"
+          />
+
+          <q-toolbar-title>Low Voltage Canada</q-toolbar-title>
+        </div>
+
+        <div class="col row justify-end">
+          <q-btn @click="toggleFullScreen">
+            {{ isFullScreen ? 'Exit Full Screen' : 'X' }}
+          </q-btn>
+        </div>
       </q-toolbar>
     </q-header>
 
-    <q-drawer show-if-above v-model="leftDrawerOpen" side="left" bordered>
+    <q-drawer
+      v-model="leftDrawerOpen"
+      show-if-above
+      :width="250"
+      :breakpoint="400"
+    >
       <q-scroll-area
         style="
           height: calc(100% - 150px);
@@ -26,6 +41,7 @@
           <menu-links-component></menu-links-component>
         </q-list>
       </q-scroll-area>
+
       <q-img
         class="absolute-top"
         src="https://cdn.quasar.dev/logo-v2/social-cover.jpg"
@@ -43,26 +59,19 @@
       </q-img>
     </q-drawer>
 
-    <q-drawer show-if-above v-model="rightDrawerOpen" side="right" bordered>
-      <!-- Right drawer content -->
-    </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
-
-    <q-footer bordered class="bg-grey-8 text-white">
-      <q-toolbar>
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
-          <div>Low Voltage Canada</div>
-        </q-toolbar-title>
-      </q-toolbar>
-    </q-footer>
   </q-layout>
 </template>
+<!-- Style Specific to the MainLayout -->
+<style>
+.header-item {
+  font-size: 14px;
+  font-family: Arial;
+}
+</style>
+<!-- script section here -->
 
 <script>
 import { defineComponent, ref } from 'vue';
@@ -75,7 +84,6 @@ export default defineComponent({
   },
   setup() {
     const leftDrawerOpen = ref(false);
-    const rightDrawerOpen = ref(false);
 
     const toggleFullScreen = () => {
       if (document.fullscreenElement) {
@@ -90,19 +98,8 @@ export default defineComponent({
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
-      rightDrawerOpen,
-      toggleRightDrawer() {
-        rightDrawerOpen.value = !rightDrawerOpen.value;
-      },
       toggleFullScreen,
     };
   },
 });
 </script>
-
-<style>
-.header-item {
-  font-size: 14px;
-  font-family: Arial;
-}
-</style>

@@ -61,12 +61,14 @@ const routes = [
         component: () => import('pages/suppliers/SuppliersReports.vue'),
       },
       {
-        path: '/maps/maps',
-        component: () => import('pages/Maps/Maps.vue'),
-      },      {
+        path: '/maps/mapsview',
+        component: () => import('pages/Maps/Mapsview.vue'),
+      },
+      {
         path: '/maps/markermap',
         component: () => import('pages/Maps/MarkerMap.vue'),
-      },      {
+      },
+      {
         path: '/maps/streetview',
         component: () => import('pages/Maps/Streetview.vue'),
       },
