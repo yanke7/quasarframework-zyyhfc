@@ -134,20 +134,20 @@ export default {
           ],
         },
         {
-          label: 'Customers',
+          label: 'Inventory',
           items: [
             {
-              to: '/customers/all',
+              to: '/inventory/all',
               icon: 'view_list',
-              label: 'Customer List',
+              label: 'Inventory List',
             },
             {
-              to: '/customers/add',
+              to: '/warehouses/',
               icon: 'add',
-              label: 'Add Customer',
+              label: 'Warehouses',
             },
             {
-              to: '/customers/reports',
+              to: '/inventory/reports',
               icon: 'description',
               label: 'Reports',
             },
