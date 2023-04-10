@@ -91,6 +91,16 @@ export default {
               icon: 'phonelink_setup',
               label: 'Setup Products',
             },
+            {
+              to: '/manufacturers/add',
+              icon: 'precision_manufacturing',
+              label: 'Manufacturer Add',
+            },
+            {
+              to: '/manufacturers/all',
+              icon: 'account_tree',
+              label: 'Manufacturers',
+            },
           ],
         },
         {
@@ -142,7 +152,7 @@ export default {
               label: 'Inventory List',
             },
             {
-              to: '/warehouses/',
+              to: '/warehouses/warehouseadd',
               icon: 'add',
               label: 'Warehouses',
             },

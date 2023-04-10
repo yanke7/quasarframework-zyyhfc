@@ -72,6 +72,14 @@ const routes = [
         path: '/maps/streetview',
         component: () => import('pages/Maps/Streetview.vue'),
       },
+      {
+        path: '/warehouses/warehouseadd',
+        component: () => import('pages/Warehouses/WarehouseAdd.vue'),
+      },
+      {
+        path: '/manufacturers/add',
+        component: () => import('pages/Manufacturers/ManufacturersAdd.vue'),
+      },
     ],
   },
 

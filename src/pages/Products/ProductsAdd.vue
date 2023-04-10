@@ -3,7 +3,7 @@
     <q-form @submit="submitForm">
       <q-card>
         <q-card-section>
-          <h2 class="text-h4">Add Inventory</h2>
+          <h2 class="text-h4">Add New Product</h2>
         </q-card-section>
 
         <q-card-section>
