@@ -23,21 +23,6 @@
           />
           <q-input v-model="supplier" label="Supplier" />
           <q-input v-model="location" label="Location" />
-
-          <vue-advanced-cropper
-            v-model="croppedImage"
-            :src="productImage"
-            :options="cropperOptions"
-            @cropped="onImageCrop"
-            v-if="showCropDialog"
-          />
-
-          <q-uploader
-            v-model="productImage"
-            label="Product Image"
-            accept="image/*"
-            @added="onImageAdded"
-          />
         </q-card-section>
 
         <q-card-actions align="right">
@@ -49,13 +34,8 @@
 </template>
 
 <script>
-import VueAdvancedCropper from 'vue-advanced-cropper';
-
 export default {
   name: 'InventoryForm',
-  components: {
-    VueAdvancedCropper,
-  },
   data() {
     return {
       productType: '',
@@ -66,9 +46,6 @@ export default {
       availability: '',
       supplier: '',
       location: '',
-      productImage: null,
-      croppedImage: null,
-      showCropDialog: false,
       pricingOptions: [
         {
           label: 'Low',
@@ -103,12 +80,6 @@ export default {
           value: 'backOrdered',
         },
       ],
-      cropperOptions: {
-        viewMode: 1,
-        background: false,
-        responsive: true,
-        checkCrossOrigin: true,
-      },
     };
   },
   methods: {
@@ -122,7 +93,6 @@ export default {
         availability: this.availability,
         supplier: this.supplier,
         location: this.location,
-        productImage: this.croppedImage,
       };
 
       // submit inventory to server
@@ -137,20 +107,6 @@ export default {
       this.availability = '';
       this.supplier = '';
       this.location = '';
-      this.productImage = null;
-      this.croppedImage = null;
-      this.showCropDialog = false;
-    },
-    onImageAdded(file) {
-      this.productImage = URL.createObjectURL(file);
-      this.showCropDialog = true;
-    },
-    onImageCrop(data) {
-      this.croppedImage = data;
-      this.showCropDialog = false;
-    },
-    onCropCancel() {
-      this.showCropDialog = false;
     },
   },
 };
