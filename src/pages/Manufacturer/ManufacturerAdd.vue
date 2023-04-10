@@ -3,35 +3,33 @@
     <q-form @submit="submitForm">
       <q-card>
         <q-card-section>
-          <h2 class="text-h4">Add Manufacturer</h2>
+          <h2 class="text-h4">Add New Manufacturer</h2>
         </q-card-section>
 
         <q-card-section>
-          <q-input v-model="manufacturer.name" label="Name" />
-          <q-input v-model="manufacturer.manufacturers" label="Manufacturers" />
-          <q-input v-model="manufacturer.website" label="Website" />
+          <q-input v-model="name" label="Name" />
+          <q-input v-model="website" label="Website" />
           <q-input
-            v-model="manufacturer.techSupportPhone"
+            v-model="techSupportPhone"
             label="Tech Support Phone Number"
           />
-          <q-input
-            v-model="manufacturer.techSupportEmail"
-            label="Tech Support Email"
+          <q-input v-model="techSupportEmail" label="Tech Support Email" />
+          <q-input v-model="tags" label="Tags" />
+          <q-space />
+          <q-space />
+          <q-uploader
+            v-model="manufacturerImage"
+            label="Manufacturer Image"
+            accept="image/*"
+            @added="onImageAdded"
           />
-          <q-input v-model="manufacturer.tags" label="Tags" />
-
-          <div class="q-gutter-sm">
-            <q-input
-              type="file"
-              v-model="image"
-              label="Image"
-              accept="image/*"
-              @change="onImageSelected"
-            />
-            <div v-if="imageUrl">
-              <img :src="imageUrl" style="max-width: 200px" />
-            </div>
-          </div>
+          <q-crop
+            v-model="croppedImage"
+            :canvas-size="{ width: 200, height: 200 }"
+            :image-src="manufacturerImage"
+            @crop="onImageCrop"
+            v-if="showCropDialog"
+          />
         </q-card-section>
 
         <q-card-actions align="right">
@@ -43,54 +41,53 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   name: 'ManufacturerAdd',
   data() {
     return {
-      manufacturer: {
-        name: '',
-        manufacturers: '',
-        website: '',
-        techSupportPhone: '',
-        techSupportEmail: '',
-        tags: '',
-      },
-      image: null,
-      imageUrl: null,
+      name: '',
+      website: '',
+      techSupportPhone: '',
+      techSupportEmail: '',
+      tags: '',
+      manufacturerImage: null,
+      croppedImage: null,
+      showCropDialog: false,
     };
   },
   methods: {
     submitForm() {
       const manufacturer = {
-        name: this.manufacturer.name,
-        manufacturers: this.manufacturer.manufacturers,
-        website: this.manufacturer.website,
-        techSupportPhone: this.manufacturer.techSupportPhone,
-        techSupportEmail: this.manufacturer.techSupportEmail,
-        tags: this.manufacturer.tags,
-        image: this.imageUrl,
+        name: this.name,
+        website: this.website,
+        techSupportPhone: this.techSupportPhone,
+        techSupportEmail: this.techSupportEmail,
+        tags: this.tags,
+        manufacturerImage: this.croppedImage,
       };
 
       // submit manufacturer to server
       console.log(manufacturer);
 
       // clear form
-      this.manufacturer.name = '';
-      this.manufacturer.manufacturers = '';
-      this.manufacturer.website = '';
-      this.manufacturer.techSupportPhone = '';
-      this.manufacturer.techSupportEmail = '';
-      this.manufacturer.tags = '';
-      this.image = null;
-      this.imageUrl = null;
+      this.name = '';
+      this.website = '';
+      this.techSupportPhone = '';
+      this.techSupportEmail = '';
+      this.tags = '';
+      this.manufacturerImage = null;
+      this.croppedImage = null;
+      this.showCropDialog = false;
     },
-    onImageSelected(event) {
-      this.image = event.target.files[0];
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.imageUrl = reader.result;
-      };
-      reader.readAsDataURL(this.image);
+    onImageAdded(file) {
+      this.manufacturerImage = URL.createObjectURL(file);
+      this.showCropDialog = true;
+    },
+    cropHandler(img) {
+      this.croppedImage = img;
+      this.showCropDialog = false;
     },
   },
 };
