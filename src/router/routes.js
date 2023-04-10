@@ -77,8 +77,8 @@ const routes = [
         component: () => import('pages/Warehouses/WarehouseAdd.vue'),
       },
       {
-        path: '/manufacturers/add',
-        component: () => import('pages/Manufacturers/ManufacturersAdd.vue'),
+        path: '/manufacturer/manufacturersadd',
+        component: () => import('pages/Manufacturer/ManufacturersAdd.vue'),
       },
     ],
   },

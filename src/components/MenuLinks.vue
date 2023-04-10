@@ -92,7 +92,7 @@ export default {
               label: 'Setup Products',
             },
             {
-              to: '/manufacturers/add',
+              to: '/manufacturer/manufacturersadd',
               icon: 'precision_manufacturing',
               label: 'Manufacturer Add',
             },
