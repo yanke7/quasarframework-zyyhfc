@@ -19,20 +19,19 @@
             label="Tech Support Email"
           />
           <q-input v-model="manufacturer.tags" label="Tags" />
-          <vue-advanced-cropper
-            v-model="croppedImage"
-            :src="manufacturerImage"
-            :options="cropperOptions"
-            @cropped="onImageCrop"
-            v-if="showCropDialog"
-          />
 
-          <q-uploader
-            v-model="manufacturerImage"
-            label="Manufacturer Image"
-            accept="image/*"
-            @added="onImageAdded"
-          />
+          <div class="q-gutter-sm">
+            <q-input
+              type="file"
+              v-model="image"
+              label="Image"
+              accept="image/*"
+              @change="onImageSelected"
+            />
+            <div v-if="imageUrl">
+              <img :src="imageUrl" style="max-width: 200px" />
+            </div>
+          </div>
         </q-card-section>
 
         <q-card-actions align="right">
@@ -44,13 +43,8 @@
 </template>
 
 <script>
-import VueAdvancedCropper from 'vue-advanced-cropper';
-
 export default {
   name: 'ManufacturerAdd',
-  components: {
-    VueAdvancedCropper,
-  },
   data() {
     return {
       manufacturer: {
@@ -60,16 +54,9 @@ export default {
         techSupportPhone: '',
         techSupportEmail: '',
         tags: '',
-        manufacturerImage: null,
-        croppedImage: null,
-        showCropDialog: false,
       },
-      cropperOptions: {
-        viewMode: 1,
-        background: false,
-        responsive: true,
-        checkCrossOrigin: true,
-      },
+      image: null,
+      imageUrl: null,
     };
   },
   methods: {
@@ -81,7 +68,7 @@ export default {
         techSupportPhone: this.manufacturer.techSupportPhone,
         techSupportEmail: this.manufacturer.techSupportEmail,
         tags: this.manufacturer.tags,
-        manufacturerImage: this.croppedImage,
+        image: this.imageUrl,
       };
 
       // submit manufacturer to server
@@ -94,20 +81,16 @@ export default {
       this.manufacturer.techSupportPhone = '';
       this.manufacturer.techSupportEmail = '';
       this.manufacturer.tags = '';
-      this.manufacturerImage = null;
-      this.croppedImage = null;
-      this.showCropDialog = false;
+      this.image = null;
+      this.imageUrl = null;
     },
-    onImageAdded(file) {
-      this.manufacturerImage = URL.createObjectURL(file);
-      this.showCropDialog = true;
-    },
-    onImageCrop(data) {
-      this.croppedImage = data;
-      this.showCropDialog = false;
-    },
-    onCropCancel() {
-      this.showCropDialog = false;
+    onImageSelected(event) {
+      this.image = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imageUrl = reader.result;
+      };
+      reader.readAsDataURL(this.image);
     },
   },
 };
