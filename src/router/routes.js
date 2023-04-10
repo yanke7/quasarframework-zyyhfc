@@ -78,7 +78,11 @@ const routes = [
       },
       {
         path: '/manufacturer/manufacturersadd',
-        component: () => import('pages/Manufacturer/ManufacturersAdd.vue'),
+        component: () => import('pages/Manufacturer/ManufacturerAdd.vue'),
+      },
+      {
+        path: '/manufactureradd',
+        component: () => import('pages/Manufacturer/ManufacturerAdd.vue'),
       },
     ],
   },

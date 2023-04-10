@@ -10,8 +10,14 @@
           <q-input v-model="manufacturer.name" label="Name" />
           <q-input v-model="manufacturer.manufacturers" label="Manufacturers" />
           <q-input v-model="manufacturer.website" label="Website" />
-          <q-input v-model="manufacturer.techSupportPhone" label="Tech Support Phone Number" />
-          <q-input v-model="manufacturer.techSupportEmail" label="Tech Support Email" />
+          <q-input
+            v-model="manufacturer.techSupportPhone"
+            label="Tech Support Phone Number"
+          />
+          <q-input
+            v-model="manufacturer.techSupportEmail"
+            label="Tech Support Email"
+          />
           <q-input v-model="manufacturer.tags" label="Tags" />
           <vue-advanced-cropper
             v-model="croppedImage"
@@ -41,7 +47,7 @@
 import VueAdvancedCropper from 'vue-advanced-cropper';
 
 export default {
-  name: 'ManufacturersAdd',
+  name: 'ManufacturerAdd',
   components: {
     VueAdvancedCropper,
   },

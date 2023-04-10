@@ -164,22 +164,17 @@ export default {
           ],
         },
         {
-          label: 'Customers',
+          label: 'Manufacturers',
           items: [
             {
-              to: '/customers/all',
+              to: '/manufacturer/all',
               icon: 'view_list',
-              label: 'Customer List',
+              label: 'Manufacturers List',
             },
             {
-              to: '/customers/add',
+              to: '/manufactureradd',
               icon: 'add',
-              label: 'Add Customer',
-            },
-            {
-              to: '/customers/reports',
-              icon: 'description',
-              label: 'Reports',
+              label: 'Add Manufacturer',
             },
           ],
         },
@@ -215,11 +210,6 @@ export default {
               to: '/customers/add',
               icon: 'add',
               label: 'Add Customer',
-            },
-            {
-              to: '/customers/reports',
-              icon: 'description',
-              label: 'Reports',
             },
           ],
         },
