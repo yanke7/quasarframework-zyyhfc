@@ -15,6 +15,7 @@
             label="Availability"
             :options="availabilityOptions"
           />
+          <q-input v-model="pdfmanual" label="PDF Manual" />
           <q-input v-model="condition" label="Condition" />
           <q-input v-model="maintenanceSchedule" label="Maintenance Schedule" />
           <q-input v-model="rentalHistory" label="Rental History" />
@@ -56,6 +57,7 @@ export default {
       sku: '',
       location: '',
       availability: '',
+      pdfmanual: '',
       condition: '',
       maintenanceSchedule: '',
       rentalHistory: '',
@@ -80,6 +82,7 @@ export default {
         sku: this.sku,
         location: this.location,
         availability: this.availability,
+        pdfmanual: this.pdfmanual,
         condition: this.condition,
         maintenanceSchedule: this.maintenanceSchedule,
         rentalHistory: this.rentalHistory,
@@ -99,6 +102,7 @@ export default {
       this.sku = '';
       this.location = '';
       this.availability = '';
+      this.pdfmanual = '';
       this.condition = '';
       this.maintenanceSchedule = '';
       this.rentalHistory = '';

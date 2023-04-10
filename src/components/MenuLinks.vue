@@ -104,8 +104,18 @@ export default {
           ],
         },
         {
-          label: 'Supplier',
+          label: 'Purchases',
           items: [
+            {
+              to: '/purchases/all',
+              icon: 'view_list',
+              label: 'Purchase List',
+            },
+            {
+              to: '/purchases/add',
+              icon: 'view_list',
+              label: 'Purchase Orders',
+            },
             {
               to: '/suppliers/all',
               icon: 'view_list',
