@@ -3,7 +3,7 @@
     <q-form @submit="submitForm">
       <q-card>
         <q-card-section>
-          <h2 class="text-h4">Add Product</h2>
+          <h2 class="text-h4">Add Inventory</h2>
         </q-card-section>
 
         <q-card-section>
@@ -23,6 +23,19 @@
           />
           <q-input v-model="supplier" label="Supplier" />
           <q-input v-model="location" label="Location" />
+          <q-uploader
+            v-model="productImage"
+            label="Product Image"
+            accept="image/*"
+            @added="onImageAdded"
+          />
+          <q-crop
+            v-model="croppedImage"
+            :canvas-size="{ width: 200, height: 200 }"
+            :image-src="productImage"
+            @crop="onImageCrop"
+            v-if="showCropDialog"
+          />
         </q-card-section>
 
         <q-card-actions align="right">
@@ -34,6 +47,8 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   name: 'InventoryForm',
   data() {
@@ -46,6 +61,9 @@ export default {
       availability: '',
       supplier: '',
       location: '',
+      productImage: null,
+      croppedImage: null,
+      showCropDialog: false,
       pricingOptions: [
         {
           label: 'Low',
@@ -93,6 +111,7 @@ export default {
         availability: this.availability,
         supplier: this.supplier,
         location: this.location,
+        productImage: this.croppedImage,
       };
 
       // submit inventory to server
@@ -107,6 +126,17 @@ export default {
       this.availability = '';
       this.supplier = '';
       this.location = '';
+      this.productImage = null;
+      this.croppedImage = null;
+      this.showCropDialog = false;
+    },
+    onImageAdded(file) {
+      this.productImage = URL.createObjectURL(file);
+      this.showCropDialog = true;
+    },
+    cropHandler(img) {
+      this.croppedImage = img;
+      this.showCropDialog = false;
     },
   },
 };
