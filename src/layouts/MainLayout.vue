@@ -14,7 +14,7 @@
     </q-header>
 
     <q-drawer
-      show-if-above
+      show-if-below
       :width="250"
       v-model="leftDrawerOpen"
       side="left"
