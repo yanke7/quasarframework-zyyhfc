@@ -192,6 +192,12 @@ export default {
               label: 'Add Vehicle',
             },
             {
+              to: '/vehicles/maintenance',
+              icon: 'add',
+              label: 'Vehicle Maintenance',
+            },
+
+            {
               to: '/vehicles/reports',
               icon: 'description',
               label: 'Reports',

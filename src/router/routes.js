@@ -90,8 +90,21 @@ const routes = [
       },
       {
         path: '/vehicles/add',
-        component: () => import('pages/Vehciles/VehiclesAdd.vue'),
+        component: () => import('pages/Vehicles/VehiclesAdd.vue'),
       },
+      {
+        path: '/safety/add',
+        component: () => import('pages/Safety/JobSiteSafetyAdd.vue'),
+      },
+      {
+        path: '/safety/toolboxadd',
+        component: () => import('pages/Safety/ToolBoxTalkAdd.vue'),
+      },
+      {
+        path: '/tools/add',
+        component: () => import('pages/Tools/ToolsAdd.vue'),
+      },
+
     ],
   },
 
