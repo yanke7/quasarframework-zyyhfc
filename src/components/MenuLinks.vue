@@ -37,7 +37,7 @@ export default {
               label: 'All Jobs',
             },
             {
-              to: '/jobsites/add',
+              to: '/jobsitesadd',
               icon: 'add',
               label: 'Add Job',
             },
@@ -179,102 +179,117 @@ export default {
           ],
         },
         {
-          label: 'Customers',
+          label: 'Vehicles',
           items: [
             {
-              to: '/customers/all',
+              to: '/vehicles/all',
               icon: 'view_list',
-              label: 'Customer List',
+              label: 'Vehicle List',
             },
             {
-              to: '/customers/add',
+              to: '/vehicles/add',
               icon: 'add',
-              label: 'Add Customer',
+              label: 'Add Vehicle',
             },
             {
-              to: '/customers/reports',
+              to: '/vehicles/reports',
               icon: 'description',
               label: 'Reports',
             },
           ],
         },
         {
-          label: 'Customers',
+          label: 'Safety',
           items: [
             {
-              to: '/customers/all',
+              to: 'safety/all',
               icon: 'view_list',
-              label: 'Customer List',
+              label: 'Job Site Safety',
             },
             {
-              to: '/customers/add',
+              to: '/safety/add',
               icon: 'add',
-              label: 'Add Customer',
+              label: 'Add Safety Report',
+            },
+            {
+              to: '/safety/report',
+              icon: 'add',
+              label: 'All Safety Reports',
+            },
+            {
+              to: '/safety/toolboxadd',
+              icon: 'add',
+              label: 'Add Tool Box Talk',
+            },
+            {
+              to: '/safety/toolboxall',
+              icon: 'add',
+              label: 'All Tool Box Talks',
             },
           ],
         },
         {
-          label: 'Customers',
+          label: 'Tools',
           items: [
             {
-              to: '/customers/all',
+              to: '/tools/all',
               icon: 'view_list',
-              label: 'Customer List',
+              label: 'Tool List',
             },
             {
-              to: '/customers/add',
+              to: '/tools/add',
               icon: 'add',
-              label: 'Add Customer',
+              label: 'Add Tool',
             },
             {
-              to: '/customers/reports',
+              to: '/tool/lists',
               icon: 'description',
-              label: 'Reports',
+              label: 'Tool Lists',
             },
           ],
         },
         {
-          label: 'Customers',
+          label: 'Tasks',
           items: [
             {
-              to: '/customers/all',
+              to: '/tasks/all',
               icon: 'view_list',
-              label: 'Customer List',
+              label: 'Task List',
             },
             {
-              to: '/customers/add',
+              to: '/tasks/add',
               icon: 'add',
-              label: 'Add Customer',
+              label: 'Task List',
             },
             {
-              to: '/customers/reports',
-              icon: 'description',
-              label: 'Reports',
+              to: '/tasks/categoryadd',
+              icon: 'add',
+              label: 'Add Task Category',
+            },
+            {
+              to: '/tasks/categorylist',
+              icon: 'view_list',
+              label: 'Category List',
             },
           ],
         },
         {
-          label: 'Products',
+          label: 'Cable Manager',
           items: [
             {
-              to: '/products/all',
+              to: '/cable/all',
               icon: 'view_list',
-              label: 'All Products',
+              label: 'All Cables',
             },
             {
-              to: '/products/add',
+              to: '/cable/add',
               icon: 'add',
-              label: 'Add Product',
+              label: 'Add Cable',
             },
             {
-              to: '/products/reports',
-              icon: 'description',
-              label: 'Report',
-            },
-            {
-              to: '/products/setup',
-              icon: 'phonelink_setup',
-              label: 'Setup Products',
+              to: '/cable/subtract',
+              icon: 'south_east',
+              label: 'Record Cable Use',
             },
           ],
         },
@@ -286,7 +301,7 @@ export default {
 
 <style scoped>
 .header-item {
-  font-size: 18px;
+  font-size: 14px;
   font-family: Arial;
 }
 </style>

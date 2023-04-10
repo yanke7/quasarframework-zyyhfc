@@ -85,8 +85,12 @@ const routes = [
         component: () => import('pages/Manufacturer/ManufacturerAdd.vue'),
       },
       {
-        path: '/jobsite/add',
-        component: () => import('pages/JobSites/JobSiteAdd.vue'),
+        path: '/jobsitesadd',
+        component: () => import('pages/JobSites/JobSitesAdd.vue'),
+      },
+      {
+        path: '/vehicles/add',
+        component: () => import('pages/Vehciles/VehiclesAdd.vue'),
       },
     ],
   },

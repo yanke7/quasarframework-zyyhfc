@@ -115,7 +115,7 @@ export default defineComponent({
 
 <style>
 .header-item {
-  font-size: 14px;
+  font-size: 12px;
   font-family: Arial;
 }
 </style>
