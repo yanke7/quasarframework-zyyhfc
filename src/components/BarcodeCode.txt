@@ -1,0 +1,25 @@
+quasar ext add cordova-plugin-barcode-scanner
+
+
+
+<q-btn label="Scan Barcode" @click="scanBarcode" />
+
+
+
+
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
+
+
+
+
+methods: {
+  scanBarcode() {
+    BarcodeScanner.scan().then(barcodeData => {
+      console.log('Barcode data', barcodeData);
+      // Do something with the barcode data
+    }).catch(error => {
+      console.error('Barcode scanning failed: ', error);
+    });
+  }
+}

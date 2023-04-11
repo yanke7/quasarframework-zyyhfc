@@ -82,6 +82,11 @@ export default {
               label: 'Add Product',
             },
             {
+              to: '/products/edit',
+              icon: 'view_list',
+              label: 'Edit Product',
+            },
+            {
               to: '/products/reports',
               icon: 'description',
               label: 'Report',
@@ -202,7 +207,7 @@ export default {
               label: 'Add Vehicle',
             },
             {
-              to: '/vehicles/maintenance',
+              to: '/vehicles/maintenanceadd',
               icon: 'add',
               label: 'Vehicle Maintenance',
             },

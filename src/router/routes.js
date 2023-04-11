@@ -104,7 +104,26 @@ const routes = [
         path: '/tools/add',
         component: () => import('pages/Tools/ToolsAdd.vue'),
       },
-
+      {
+        path: '/purchases/add',
+        component: () => import('pages/Purchases/PurchasesAdd.vue'),
+      },
+      {
+        path: '/purchases/edit',
+        component: () => import('pages/Purchases/PurchasesEdit.vue'),
+      },
+      {
+        path: '/vehicles/maintenanceadd',
+        component: () => import('pages/Vehicles/VehicleMaintenanceAdd.vue'),
+      },
+      {
+        path: '/cable/add',
+        component: () => import('pages/Cable/CableAdd.vue'),
+      },
+      {
+        path: '/tasks/add',
+        component: () => import('pages/Tasks/TaskAdd.vue'),
+      },
     ],
   },
 
