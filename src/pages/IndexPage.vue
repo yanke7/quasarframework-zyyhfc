@@ -21,11 +21,34 @@
       style="width: 200px; height: 140px"
     />
 
+    <div class="q-pa-md">
+      <q-date
+        v-model="date"
+        title="John Doe"
+        subtitle="Birthday"
+        landscape
+        multiple
+        range
+        dark
+      />
+    </div>
+
+    <div style="max-width: 800px; width: 100%">
+      <q-calendar
+        v-model="selectedDate"
+        view="week-scheduler"
+        :resources="resources"
+        :resource-height="50"
+        locale="en-us"
+        style="height: 400px"
+      />
+    </div>
+    <AgendaAvatar />
     <router-link to="/customers/add" class="q-mt-md">
       <q-btn color="primary" label="Customers" />
     </router-link>
 
-      <router-link to="/products/add" class="q-mt-md">
+    <router-link to="/products/add" class="q-mt-md">
       <q-btn color="primary" label="Customers" />
     </router-link>
 
@@ -51,15 +74,29 @@
 
 <script>
 import { ref } from 'vue';
+import AgendaAvatar from '../components/AgendaAvatar.vue';
 
 export default {
   name: 'IndexPage',
-
+  components: {
+    AgendaAvatar,
+  },
   setup() {
     const text = ref('');
 
     return {
       text,
+      date: ref('2019/02/01'),
+      selectedDate: '',
+      resources: [
+        { label: 'John' },
+        { label: 'Mary' },
+        { label: 'Susan' },
+        { label: 'Olivia' },
+        { label: 'Board Room' },
+        { label: 'Room-1' },
+        { label: 'Room-2' },
+      ],
     };
   },
 };

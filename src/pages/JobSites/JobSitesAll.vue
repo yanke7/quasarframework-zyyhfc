@@ -129,14 +129,7 @@ export default {
     const tableData = ref(rows);
 
     function toggleExpand(row) {
-      tableData.value = tableData.value.map((r) =>
-        r === row ? { ...r, expand: !r.expand } : r
-      );
-    }
-
-    // Initialize the 'expand' property for each row
-    for (const row of tableData.value) {
-      row.expand = false;
+      row.expand = !row.expand;
     }
 
     return {

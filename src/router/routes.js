@@ -113,6 +113,10 @@ const routes = [
         component: () => import('pages/Purchases/PurchasesAdd.vue'),
       },
       {
+        path: '/purchases/all',
+        component: () => import('pages/Purchases/PurchasesAll.vue'),
+      },
+      {
         path: '/purchases/edit',
         component: () => import('pages/Purchases/PurchasesEdit.vue'),
       },
@@ -127,6 +131,10 @@ const routes = [
       {
         path: '/tasks/add',
         component: () => import('pages/Tasks/TaskAdd.vue'),
+      },
+      {
+        path: '/planners',
+        component: () => import('pages/PlannersPage.vue'),
       },
     ],
   },
