@@ -3,7 +3,7 @@
     <q-form @submit="submitForm">
       <q-card>
         <q-card-section>
-          <h2 class="text-h4">Add New Tool</h2>
+          <h2 class="text-h4">Add Tool</h2>
         </q-card-section>
         <q-card-section>
           <q-input v-model="toolName" label="Tool Name" />
