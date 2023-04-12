@@ -69,6 +69,16 @@ export default {
           ],
         },
         {
+          label: 'Planners',
+          items: [
+            {
+              to: '/planners',
+              icon: 'view_list',
+              label: 'Planners',
+            },
+          ],
+        },
+        {
           label: 'Products',
           items: [
             {
